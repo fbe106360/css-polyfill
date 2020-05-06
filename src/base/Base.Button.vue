@@ -7,7 +7,7 @@ import VBtn from 'vuetify/lib/components/VBtn/VBtn'
 // Create Base Mixins and Define Custom Properties
 const base = Vue.extend({ mixins: [VBtn] })
 export default base.extend({
-  name: "smc-btn",
+  name: "my-btn",
   props: {
       block: {
         type: Boolean,

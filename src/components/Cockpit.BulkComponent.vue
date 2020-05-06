@@ -8,34 +8,30 @@
       transition="scroll-y-transition"
     >
       <template v-slot:activator="{ on }">
-        <smc-btn :color="bulkButtonColor" id="button" v-on="on">Bulk Edit</smc-btn>
+        <my-btn :color="bulkButtonColor" id="button" v-on="on">Bulk Edit</my-btn>
 
       </template>
       <v-card>
         <v-card-title>
-          <smc-switch :label="bulkState" v-model="bulkMode"></smc-switch>
+          <my-switch :label="bulkState" v-model="bulkMode"></my-switch>
         </v-card-title>
         <v-card-text>
-          <smc-btn class="mb-2" color="secondary" :disabled="!bulkMode">Select All</smc-btn>
-          <smc-btn color="secondary" :disabled="!bulkMode">Unselect All</smc-btn>
-          <smc-btn class="mt-2" color="secondary" :disabled="!bulkMode">Invert</smc-btn>
+          <my-btn class="mb-2" color="secondary" :disabled="!bulkMode">Select All</my-btn>
+          <my-btn color="secondary" :disabled="!bulkMode">Unselect All</my-btn>
+          <my-btn class="mt-2" color="secondary" :disabled="!bulkMode">Invert</my-btn>
         </v-card-text>
         <v-card-actions>
           <v-dialog v-model="dialog" scrollable transition="dialog-transition">
             <template v-slot:activator="{ on }">
-              <smc-btn color="success" :disabled="!bulkMode" v-on="on">Start Bulk</smc-btn>
+              <my-btn color="success" :disabled="!bulkMode" v-on="on">Start Bulk</my-btn>
             </template>
+            <p>To Close Bulk click on  the screen</p>
           </v-dialog>
         </v-card-actions>
       </v-card>
     </v-menu>
   </v-container>
 </template>
-<style scoped>
-        @media screen and (min-width:0\0) {
-          #button { background-color: #006eff }
-        }  
-</style>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
