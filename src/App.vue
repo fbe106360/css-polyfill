@@ -38,23 +38,24 @@
     </v-app-bar>
 
     <v-content>
-      <HelloWorld/>
+      <BulkComponent/>
     </v-content>
   </v-app>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld';
+<script lang="ts">
+import Vue from 'vue';
+import BulkComponent from './components/Cockpit.BulkComponent.vue';
 
-export default {
+export default Vue.extend({
   name: 'App',
 
   components: {
-    HelloWorld,
+    BulkComponent,
   },
 
   data: () => ({
     //
   }),
-};
+});
 </script>
